@@ -1,8 +1,10 @@
 <template>
   <div class="dashboard-page">
     <header>
-      <span>Привет, {{ username }}</span>
-      <button @click="logout">Выйти</button>
+      <span
+        >Привет, <span class="username">{{ username }}</span>
+      </span>
+      <button class="logout-btn" @click="logout">Выйти</button>
     </header>
     <CityDropdown />
     <ImageSlider />
@@ -42,11 +44,28 @@ export default {
 
 <style scoped lang="scss">
 .dashboard-page {
+  padding: 0 24px;
+
   header {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #f5f5f5;
+    margin-bottom: 20px;
+    padding: 24px 0;
+
+    .username {
+      font-weight: 700;
+    }
+
+    .logout-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 12px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 }
 </style>
